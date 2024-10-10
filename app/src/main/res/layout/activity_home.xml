@@ -125,14 +125,55 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="135dp"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            >
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/salad"
+                style="@style/my_style"
+                android:background="@drawable/category_card_bc"
+                app:srcCompat="@drawable/category_salad" />
+
+            <TextView
+                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/category_salad"
-                android:background="@drawable/category_card_bc"/>
+                android:layout_below="@id/salad"
+                android:layout_alignStart="@id/salad"
+                android:layout_alignEnd="@id/salad"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="12dp"
+                android:text="Salad"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <ImageView
+                android:id="@+id/MainDish"
+                style="@style/my_style"
+                android:background="@drawable/category_card_bc"
+                app:srcCompat="@drawable/drinks"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@id/salad"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:id="@+id/MainDish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MainDish"
+                android:layout_alignStart="@+id/MainDish"
+                android:layout_alignEnd="@+id/MainDish"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="12dp"
+                android:text="Main"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
         </RelativeLayout>
     </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
