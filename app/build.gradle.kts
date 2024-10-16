@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.android) 
 }
 
 android {
@@ -45,6 +45,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    var room_version = "2.6.1"
+
+    implementation ("androidx.room:room-runtime:$room_version")
+    annotationProcessor ("androidx.room:ro9om-compiler:$room_version")
 
     // Correct Lottie version for View-based implementation
     val lottieVersion = "5.2.0"

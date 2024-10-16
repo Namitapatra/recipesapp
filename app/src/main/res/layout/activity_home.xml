@@ -115,6 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
@@ -126,9 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="135dp"
             android:orientation="vertical"
-            android:paddingRight="20dp"
             android:paddingLeft="20dp"
-            >
+            android:paddingRight="20dp">
 
             <ImageView
                 android:id="@+id/salad"
@@ -147,33 +147,100 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="19dp"
                 android:layout_marginBottom="12dp"
+                android:fontFamily="@font/afacad"
                 android:text="Salad"
                 android:textColor="@color/black"
                 android:textSize="17sp" />
+
             <ImageView
                 android:id="@+id/MainDish"
                 style="@style/my_style"
-                android:background="@drawable/category_card_bc"
-                app:srcCompat="@drawable/drinks"
                 android:layout_marginStart="17dp"
                 android:layout_toEndOf="@id/salad"
-                tools:ignore="DuplicateIds" />
+                android:background="@drawable/category_card_bc"
+                app:srcCompat="@drawable/drinks" />
 
             <TextView
-                android:id="@+id/MainDish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/MainDish"
-                android:layout_alignStart="@+id/MainDish"
-                android:layout_alignEnd="@+id/MainDish"
+                android:layout_below="@id/MainDish"
+                android:layout_alignStart="@id/MainDish"
+                android:layout_alignEnd="@id/MainDish"
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="19dp"
                 android:layout_marginBottom="12dp"
                 android:text="Main"
-                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/Drinks"
+                style="@style/my_style"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@id/MainDish"
+                android:background="@drawable/category_card_bc"
+                app:srcCompat="@drawable/catergory_drinks" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Drinks"
+                android:layout_alignStart="@id/Drinks"
+                android:layout_alignEnd="@id/Drinks"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="12dp"
+                android:text="Drinks"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/Desserts"
+                style="@style/my_style"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@id/Drinks"
+                android:background="@drawable/category_card_bc"
+                app:srcCompat="@drawable/category_dessert" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Desserts"
+                android:layout_alignStart="@id/Desserts"
+                android:layout_alignEnd="@id/Desserts"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="12dp"
+                android:text="Desserts"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
         </RelativeLayout>
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/archivo"
+        android:text="Popolar recipe"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/rv_polular"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:listitem="@layout/popular_rv_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
